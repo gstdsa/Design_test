@@ -1,0 +1,424 @@
+<HTML>
+<HEAD>
+<SCRIPT>
+    
+    window.onload=function()         
+    {
+    document.getElementById('btnGen').addEventListener('click',createPassword)             //calling createPassword() when GENERATE button presssed!!
+    document.getElementById('btnGen').addEventListener('click',labl)
+                       //calling lalbl() when GENERATE button presssed!!
+    }
+
+function createPassword(e)
+{
+
+ var length=document.getElementById('passIn').value;
+
+
+if ((document.getElementById("L").checked)&&(document.getElementById("U").checked)&&(document.getElementById("D").checked)&&(document.getElementById("S").checked))
+{
+  window.full(length);
+}
+
+if ((document.getElementById("L").checked)&&(document.getElementById("U").checked)&&(document.getElementById("D").checked))
+{
+  window.lowupdig(length);
+  
+}
+
+if ((document.getElementById("L").checked)&&(document.getElementById("U").checked)&&(document.getElementById("S").checked))
+{
+  window.lowupspc(length);
+ 
+}
+
+if ((document.getElementById("L").checked)&&(document.getElementById("D").checked)&&(document.getElementById("S").checked))
+{
+   window.lowdigspc(length);
+ 
+}
+
+if ((document.getElementById("U").checked)&&(document.getElementById("D").checked)&&(document.getElementById("S").checked))
+{
+   window. updigspc(length);
+
+}
+
+if ((document.getElementById("L").checked)&&(document.getElementById("D").checked))
+{
+    window.lowdig(length);
+
+}
+
+if ((document.getElementById("L").checked)&&(document.getElementById("S").checked))
+{
+   window.lowspc(length);
+  
+}
+
+if ((document.getElementById("L").checked)&&(document.getElementById("U").checked))
+{
+   window.lowup(length); 
+
+}
+
+if ((document.getElementById("U").checked)&&(document.getElementById("D").checked))
+{
+    window.updig(length);
+ 
+}
+
+
+if ((document.getElementById("U").checked)&&(document.getElementById("S").checked))
+{
+  window.upspc(length);
+ 
+}
+
+if ((document.getElementById("D").checked)&&(document.getElementById("S").checked))
+{
+   window.digspc(length);
+)  
+}
+
+if (document.getElementById("L").checked)
+{
+    window.low(length);
+
+}
+
+
+if (document.getElementById("U").checked)
+{
+   window.up(length);
+ 
+}
+
+if (document.getElementById("D").checked)
+{
+  window.dig(length);
+ 
+}
+
+
+if (document.getElementById("S").checked)
+{
+    window.spc(length);  
+}
+
+
+function full(length) {
+    var length=document.getElementById('passIn').value;
+    var chars = "abcdefghijklmnopqrstuvwxyz!#$%&'()*+,-./:;<=>?@[]^_`{|}~ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+    var pass = "";
+    for (var x = 0; x < length; x++) {
+        var i = Math.floor(Math.random() * chars.length);
+        pass += chars.charAt(i);
+    }
+    var ps= pass;
+    document.getElementById('result').innerHTML=(ps);
+}
+
+
+
+
+function lowupdig(length) {
+    var length=document.getElementById('passIn').value;
+    var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+    var pass = "";
+    for (var x = 0; x < length; x++) {
+        var i = Math.floor(Math.random() * chars.length);
+        pass += chars.charAt(i);
+    }
+    var ps=pass;
+    document.getElementById('result').innerHTML=(ps);
+}
+
+
+
+ 
+function lowupspc(length) {
+    var length=document.getElementById('passIn').value;
+    var chars = "abcdefghijklmnopqrstuvwxyz!#$%&'()*+,-./:;<=>?@[]^_`{|}~ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var pass = "";
+    for (var x = 0; x < length; x++) {
+        var i = Math.floor(Math.random() * chars.length);
+        pass += chars.charAt(i);
+    }
+    var ps=pass;
+    document.getElementById('result').innerHTML=(ps);
+}
+
+
+
+function lowdigspc(length) {
+    var length=document.getElementById('passIn').value;
+    var chars = "abcdefghijklmnopqrstuvwxyz!#$%&'()*+,-./:;<=>?@[]^_`{|}~1234567890";
+    var pass = "";
+    for (var x = 0; x < length; x++) {
+        var i = Math.floor(Math.random() * chars.length);
+        pass += chars.charAt(i);
+    }
+    var ps=pass;
+    document.getElementById('result').innerHTML=(ps);
+}
+
+
+
+function updigspc(length) {
+    var length=document.getElementById('passIn').value;
+    var chars = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+    var pass = "";
+    for (var x = 0; x < length; x++) {
+        var i = Math.floor(Math.random() * chars.length);
+        pass += chars.charAt(i);
+    }
+    var ps=pass;
+    document.getElementById('result').innerHTML=(ps);
+}
+
+
+
+function lowdig(length) {
+    var length=document.getElementById('passIn').value;
+    var chars = "abcdefghijklmnopqrstuvwxyz1234567890";
+    var pass = "";
+    for (var x = 0; x < length; x++) {
+        var i = Math.floor(Math.random() * chars.length);
+        pass += chars.charAt(i);
+    }
+    var ps=pass;
+    document.getElementById('result').innerHTML=(ps);
+}
+
+
+
+function lowspc(length) {
+    var length=document.getElementById('passIn').value;
+    var chars = "abcdefghijklmnopqrstuvwxyz!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+    var pass = "";
+    for (var x = 0; x < length; x++) {
+        var i = Math.floor(Math.random() * chars.length);
+        pass += chars.charAt(i);
+    }
+    var ps= pass;
+    document.getElementById('result').innerHTML=(ps);
+}
+
+
+
+function lowup(length) {
+    var length=document.getElementById('passIn').value;
+    var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var pass = "";
+    for (var x = 0; x < length; x++) {
+        var i = Math.floor(Math.random() * chars.length);
+        pass += chars.charAt(i);
+    }
+       var ps= pass;
+       document.getElementById('result').innerHTML=(ps);
+}
+
+
+
+function updig(length) {
+    var length=document.getElementById('passIn').value;
+    var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+    var pass = "";
+    for (var x = 0; x < length; x++) {
+        var i = Math.floor(Math.random() * chars.length);
+        pass += chars.charAt(i);
+    }
+    var ps= pass;
+    document.getElementById('result').innerHTML=(ps);
+}
+
+
+
+function upspc(length) {
+    var length=document.getElementById('passIn').value;
+    var chars = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var pass = "";
+    for (var x = 0; x < length; x++) {
+        var i = Math.floor(Math.random() * chars.length);
+        pass += chars.charAt(i);
+    }
+    var ps= pass;
+    document.getElementById('result').innerHTML=(ps);
+}
+
+
+
+function digspc(length) {
+    var length=document.getElementById('passIn').value;
+    var chars = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~1234567890";
+    var pass = "";
+    for (var x = 0; x < length; x++) {
+        var i = Math.floor(Math.random() * chars.length);
+        pass += chars.charAt(i);
+    }
+    var ps= pass;
+    document.getElementById('result').innerHTML=(ps);
+}
+
+
+
+function low(length) {
+    var length=document.getElementById('passIn').value;
+    var chars = "abcdefghijklmnopqrstuvwxyz";
+    var pass = "";
+    for (var x = 0; x < length; x++) {
+        var i = Math.floor(Math.random() * chars.length);
+        pass += chars.charAt(i);
+    }
+    var ps=pass;
+    document.getElementById('result').innerHTML=(ps);
+}
+
+
+
+function up(length) {
+    var length=document.getElementById('passIn').value;
+    var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+    var pass = "";
+    for (var x = 0; x < length; x++) {
+        var i = Math.floor(Math.random() * chars.length);
+        pass += chars.charAt(i);
+    }
+    var ps=pass;
+    document.getElementById('result').innerHTML=(ps);
+}
+
+
+
+function dig(length) {
+    var length=document.getElementById('passIn').value;
+    var chars = "1234567890";
+    var pass = "";
+    for (var x = 0; x < length; x++) {
+        var i = Math.floor(Math.random() * chars.length);
+        pass += chars.charAt(i);
+    }
+    var ps=pass;
+    document.getElementById('result').innerHTML=(ps);
+}
+
+
+
+function spc(length) {
+    var length=document.getElementById('passIn').value;
+    var chars = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+    var pass = "";
+    for (var x = 0; x < length; x++) {
+        var i = Math.floor(Math.random() * chars.length);
+        pass += chars.charAt(i);
+    }
+    var ps=pass;
+    document.getElementById('result').innerHTML=(ps);
+}
+
+}
+function labl(c)      //Fn to print password text when button triggered
+{
+var txt="Your Random Password is:";
+document.getElementById('text').innerHTML=(txt);       //Printing txt inside div with id 'text'
+}
+
+</SCRIPT>
+<style type="text/css">
+.body{
+	background-image: url("matrix.png");
+	
+	}
+
+
+* {
+    /* With these codes padding and border does not increase it's width and gives intuitive style.*/
+  
+	-webkit-box-sizing: border-box;   
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+	#cl{color:red;font-family:comic sans MS;font-size:45px;}   /* title font */
+	#bl{color:red;font-family:verdana;font-size:32px;}   /* Body text font */
+	.bk{color:cyan;font-family:verdana;font-size:28px;}  /* Print message font */
+	.bf{color:yellow;font-family:verdana;font-size:28px;
+	padding: 20px;
+	} /* Password print font */
+    #cr{color:teal;font-size:13px;}
+.bttn {                               
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: white;
+  background-color:#3e8e41;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  font-family:verdana;
+  font-size: 13px;
+}
+
+.bttn:hover {
+background-color: #3e8e41}               
+
+.bttn:active {
+  background-color: #7a42f4;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+</style>
+</HEAD>
+ <body class="body" bgcolor="black">
+        
+		<br><br>
+		<center>
+		<div>
+		<center>
+		<h3 id="cl"> RANDOM PASS</h3>
+		</center>
+		<br>
+		<br>
+		<div id="bl">
+		<center>
+		<label for="in">Enter the password length:</label>
+		<input id="passIn" type="number" />                           <!--INPUT NUMBER BOX-->
+		</center>
+		<br>
+		<label>Lowercase:
+		<input type="checkbox" id="L">
+		<br>
+		<label>Uppercase:
+		<input type="checkbox" id="U">
+		<br>
+		<label>Digits:
+		<input type="checkbox" id="D">
+		<br>
+		<label>Special Characters:
+		<input type="checkbox" id="s">
+		<br>
+		<center>
+		<button class="bttn" id="btnGen">Generate</button>             <!--GENERATE button-->
+		</center>
+		<br>
+	<br>
+
+<center><div class="bk" id="text"></div>                           <!-- div displaying "YOUR PASSWORD IS " text-->
+</center>
+	
+<center><div class="bf" id="result"></div>                        <!-- div displaying generated passwords -->
+</center>
+</div>
+<br><br><br><br><br>
+	
+		</div>
+		</center>  
+	
+	<p align=right id="cr">Created by Gautham Prakash<p>
+    </body>
+</html>
