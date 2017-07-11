@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
         <title>Random Pass Design</title>
-<link rel="stylesheet" href="animate.css">
+
 <SCRIPT>
     
     window.onload=function()         
@@ -22,7 +22,7 @@ function createPassword(e)
 {
   document.getElementById("bash").style.backgroundColor='BLACK';
 }
-else if(length<5)
+else if(length<6)
 {
   document.getElementById("bash").style.backgroundColor='RED';
 }
@@ -304,9 +304,9 @@ background-color: #3e8e41}
     width:100%;
     position:fixed;
     top:0px;
-	;
+  ;
 }
-#header1 {
+.header1 {
     height:60px;
     border:1px solid #CCC;
     width:100%;
@@ -343,6 +343,53 @@ position: absolute;
 #bash{font-family:verdana;font-size:28px;text-align:center; background:aliceblue;color:white;}
 
 
+.[type="checkbox"]:not(:checked),
+.[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+ 
+/* Prepare the label */
+.[type="checkbox"]:not(:checked) + label,
+.[type="checkbox"]:checked + label {
+  position: relative; /* permet de positionner les pseudo-éléments */
+  padding-left: 25px; /* fait un peu d'espace pour notre case à venir */
+  cursor: pointer;   }
+
+
+.[type="checkbox"]:not(:checked) + label:before,
+.[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left:0; top: 2px;
+  width: 17px; height: 17px; /* dim. of the box */
+  border: 1px solid #aaa;
+  background: #f8f8f8;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.3) /* slight inner shadow */
+}
+ 
+
+.[type="checkbox"]:not(:checked) + label:after,
+.[type="checkbox"]:checked + label:after {
+  content: '✔';
+  position: absolute;
+  top: 0; left: 4px;
+  font-size: 14px;
+  color: #09ad7e;
+  transition: all .2s; /* animation incoming :p */
+}
+/* if "not checked" */
+.[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0; /* invisible */
+  transform: scale(0); /* scaled down to 0 */
+}
+/* If "checked" */
+.[type="checkbox"]:checked + label:after {
+  opacity: 1; /* visible */
+  transform: scale(1); /* scaled up to normal */
+}
+}
 
 </style>
 
@@ -350,7 +397,7 @@ position: absolute;
 <body>
 
 <div class="header-cont">
-<div class="animated jackInTheBox" id="header1">
+<div class="header1">
 RAND PASS
 </div>
 <div id="bash"class="header2">
@@ -368,21 +415,23 @@ RAND PASS
         <label for="in">Enter the password length:</label>
         <input id="passIn" type="number" value="8"/>                           <!--INPUT NUMBER BOX-->
         </center>
-        <CENTER>
         <br>
-        <label>Lowercase:
+        
         <input type="checkbox" id="L" checked>
+        <label for="L">Lowercase</label>
         <br>
-        <label>Uppercase:
+        
         <input type="checkbox" id="U">
+        <label for="U">Uppercase</label>
         <br>
-        <label>Digits:
+       
         <input type="checkbox" id="D" checked>
+        <label for="D">Digits</label>
         <br>
-        <label>Special Characters:
+        
         <input type="checkbox" id="S">
+        <label for="S">Special Characters</label>
         <br>
-        </center>
         <center>
         <button class="bttn" id="btnGen">Generate</button>             <!--GENERATE button-->
         </center>
